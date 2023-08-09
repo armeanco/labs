@@ -29,11 +29,10 @@ int evenSubarrays(std::vector<int> &array, int step) {
 	return nxt == 0 ? res + 1 : res;
 }
 int main() {
-	int step;
-	std::cin >> step;
-	std::vector<int> array = {1, 2, 2, 1, 3, 3, 5, 5, 6};
-	std::vector<int> array = {1, 2, 2, 2, 1, 1, 2};
-	std::vector<int> array = {1, 2, 2, 1, 3, 3, 5, 5, 6, 1, 2, 2, 2, 1, 1, 2, 2, 6, 6};
+	int n, step;
+	std::cin >> n >> step;
+	std::vector<int> array(n);
+	for( int i = 0; i < n; ++i ) std::cin >> array[i];
 	std::cout << evenSubarrays(array, step); 
 	return EXIT_SUCCESS;
 }
