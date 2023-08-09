@@ -7,9 +7,9 @@
 #include <set>
 
 int evenSubarrays(std::vector<int> &array, int step) {
+        if( step % 2 != 0 ) return 0;
 	int cnt = 0, r = step, res = 0, l = 0, nxt = 0;
 	std::vector<int> hash(100000);
-	if( step % 2 != 0 ) return 0;
 	for( ; l++ < step; ) {
 		hash[array[l - 1]]++;
 		if( hash[array[l - 1]] % 2 != 0 ) cnt++; 
