@@ -196,3 +196,44 @@ int main(int argc, char** argv) {
 
 	return EXIT_SUCCESS;
 }
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int evenSubarrays(std::vector<int> &array, int step) {
+	int cnt = 1, r = 0, res = 0;
+	std::vector<int> hash(100);
+	hash[array[0]]++;
+	while( r < static_cast<int>(array.size()) ) {
+		std::cout << "r: " << r << " " << hash[array[r]] <<  " " << array[r] << " cnt: " << cnt << '\n';
+		//hash[array[r]]++;
+		//r++;
+		if( hash[array[r]] % 2 != 0 && hash[array[r]] > 0 ) cnt++;
+		if( hash[array[r]] % 2 == 0 ) cnt--;
+		r++;
+		hash[array[r]]++;
+		//std::cout << "r: " << r << " " << " " << r - step + 1 << " " << hash[array[r]] << " cnt: " << cnt << '\n';
+		//if( hash[array[r]] % 2 != 0 ) cnt++;
+		//if( hash[array[r]] % 2 == 0 ) cnt--;
+		if( r >= step ) {
+			std::cout << "r inside:	" << r << " " << r - step + 1 << " " << hash[array[r]] << " " << hash[array[r - step + 1]] << " " << " cnt: " << cnt << " " << array[r] << " " << array[r - step + 1] << "\n";
+			//hash[array[r - step + 1]]--;
+			if( hash[array[r - step - 1]] % 2 != 0 && hash[array[r]] > 0 ) cnt++;
+			if( hash[array[r - step - 1]] % 2 == 0 ) cnt--;
+			hash[array[r - step + 1]]--;
+		}
+		if( cnt == 0 ) res++;
+		if( r + 1 == static_cast<int>(array.size()) ) break;
+	}
+	std::cout << res << '\n';
+	return 0;
+}
+
+int main() {
+	int step;
+	std::cin >> step;
+	std::vector<int> array = {1, 2, 2, 1, 3, 5, 5, 3};
+	evenSubarrays(array, step);
+	return EXIT_SUCCESS;
+}
