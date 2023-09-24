@@ -68,7 +68,7 @@ void sol(std::vector<std::string> &grid) {
 
 int main() {
   std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr);
+  std::cin.tie(nullptr);
   std::cout.tie(nullptr);
   int N;
   std::cin >> N;
