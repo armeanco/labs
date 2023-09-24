@@ -74,6 +74,6 @@ int main() {
   std::cin >> N;
   std::vector<std::string> grid( N );
   for( int i = 0; i < N; ++i ) std::cin >> grid[i];
-	sol(grid);
-	return EXIT_SUCCESS;
+  sol(grid);
+  return EXIT_SUCCESS;
 }
