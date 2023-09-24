@@ -25,7 +25,7 @@ struct G {
 };
 
 void sol(std::vector<std::string> &grid) {
-	std::pair<int, int> start;
+  std::pair<int, int> start;
   int keyCnt = 0, m = static_cast<int>( grid.size() ), n = static_cast<int>( grid[0].size() );
   if( m == 0 || n == 0 ) return;
         
