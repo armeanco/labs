@@ -31,7 +31,7 @@ std::vector<std::vector<std::vector<int>>> visited(101, std::vector<std::vector<
 const int dx[4] = {0, 0, 1, -1}, dy[4] = {1, -1, 0, 0};
 
 int sol(std::pair<int, int> &pos) {
-	      int vmask = 0;
+        int vmask = 0;
         std::queue<G> q;
         q.push({pos.first, pos.second, 0});
         visited[q.front().x][q.front().y][0] = 0;
@@ -79,7 +79,7 @@ int sol(std::pair<int, int> &pos) {
 
 int main() {
   std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr);
+  std::cin.tie(nullptr);
   std::cout.tie(nullptr);
   std::pair<int, int> pos;
   while( (std::cin >> R >> C) && ( R || C ) ) {
@@ -94,5 +94,5 @@ int main() {
     if( res == -1 ) std::cout << "The poor student is trapped!\n";
     else std::cout << "Escape possible in " << res << " steps.\n";
   }
-	return EXIT_SUCCESS;
+  return EXIT_SUCCESS;
 }
