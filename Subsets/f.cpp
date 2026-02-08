@@ -10,7 +10,7 @@ int main() {
   int32_t n;
   std::cin >> n;
   auto subsets = [](int32_t n) -> int64_t {
-    return 2^n-1;
+    return std::pow(2, n) - 1;
   };
   subsets(n);
 }
@@ -20,6 +20,6 @@ int main() {
   int32_t n;
   std::cin >> n;
   auto cnt = [](int32_t n) -> int64_t {
-    return n*2^n-1;
+    return n*std::pow(2, (n - 1));
   };
 }
